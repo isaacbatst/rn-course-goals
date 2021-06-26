@@ -1,14 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, StatusBar as StatusBarData } from 'react-native';
-import FlexExample from './components/FlexExample';
+import Main from './components/Main';
 
 export default function App() {
   return (
     <View style={styles.app}>
       <StatusBar style="auto" />
       <View style={styles.container}>
-        <FlexExample />
+        <Main />
       </View>
     </View>
   );
@@ -17,10 +17,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     marginTop: StatusBarData.currentHeight,
-    flex:1
+    paddingHorizontal: 50,
+    flex: 1,
   },
   app: {
     flex: 1,
     backgroundColor: '#ff7',
-  }
+  },
 });

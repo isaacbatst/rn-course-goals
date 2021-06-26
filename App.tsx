@@ -6,7 +6,7 @@ import Main from './components/Main';
 export default function App() {
   return (
     <View style={styles.app}>
-      <StatusBar style="auto" />
+      <StatusBar style="dark" />
       <View style={styles.container}>
         <Main />
       </View>

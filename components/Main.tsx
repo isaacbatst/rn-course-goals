@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
-import { View, Button, TextInput, StyleSheet, Text } from 'react-native';
+import { View, Button, TextInput, StyleSheet } from 'react-native';
+import { List } from '../types';
+import Goals from './Goals';
 
 function Main() {
   const [goal, setGoal] = useState('');
-  const [goals, setGoals] = useState<string[]>([]);
+  const [goals, setGoals] = useState<List>([]);
 
   function handleGoalInput(text: string) {
     setGoal(text);
   }
 
   function handleAddGoal() {
-    setGoals((currentGoals) => [...currentGoals, goal]);
+    setGoals((currentGoals) => [
+      ...currentGoals,
+      { key: Math.random().toString(), value: goal },
+    ]);
   }
 
   return (
@@ -22,13 +27,9 @@ function Main() {
           value={goal}
           onChangeText={handleGoalInput}
         />
-        <Button onPress={handleAddGoal} title="Addsss" />
+        <Button onPress={handleAddGoal} title="ADD" />
       </View>
-      <View>
-        {goals.map((thisGoal) => (
-          <Text key={thisGoal}>{thisGoal}</Text>
-        ))}
-      </View>
+      <Goals goals={goals} />
     </View>
   );
 }

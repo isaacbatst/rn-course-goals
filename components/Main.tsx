@@ -5,14 +5,9 @@ import GoalInput from './Goals/GoalInput';
 import Goals from './Goals/Goals';
 
 function Main() {
-  const [goal, setGoal] = useState('');
   const [goals, setGoals] = useState<Goal[]>([]);
 
-  function handleGoalInput(text: string) {
-    setGoal(text);
-  }
-
-  function handleAddGoal() {
+  function handleAddGoal(goal: string) {
     setGoals((currentGoals) => [
       ...currentGoals,
       { key: Math.random().toString(), value: goal },
@@ -21,11 +16,7 @@ function Main() {
 
   return (
     <View>
-      <GoalInput
-        goal={goal}
-        handleAddGoal={handleAddGoal}
-        handleGoalInput={handleGoalInput}
-      />
+      <GoalInput handleAddGoal={handleAddGoal} />
       <Goals goals={goals} />
     </View>
   );

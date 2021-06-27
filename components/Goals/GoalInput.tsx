@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet } from 'react-native';
 
 function GoalInput({
-  goal,
   handleAddGoal,
-  handleGoalInput,
 }: {
-  goal: string;
-  handleAddGoal: () => void;
-  handleGoalInput: (text: string) => void;
+  handleAddGoal: (goal: string) => void;
 }) {
+  const [goal, setGoal] = useState('');
+
+  function handleGoalInput(text: string) {
+    setGoal(text);
+  }
+
   return (
     <View style={styles.inputContainer}>
       <TextInput
@@ -18,7 +20,7 @@ function GoalInput({
         value={goal}
         onChangeText={handleGoalInput}
       />
-      <Button onPress={handleAddGoal} title="ADD" />
+      <Button onPress={() => handleAddGoal(goal)} title="ADD" />
     </View>
   );
 }

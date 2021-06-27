@@ -1,1 +1,6 @@
-export type List = Record<'key' | 'value', string>[];
+export interface ListItem<T> {
+  key: string;
+  value: T;
+}
+
+export type Goal = ListItem<string>;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Button, TextInput, StyleSheet } from 'react-native';
 import { List } from '../types';
-import Goals from './Goals';
+import Goals from './Goals/Goals';
 
 function Main() {
   const [goal, setGoal] = useState('');

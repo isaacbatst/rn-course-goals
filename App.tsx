@@ -17,7 +17,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     marginTop: StatusBarData.currentHeight,
-    paddingHorizontal: 50,
+    padding: 50,
     flex: 1,
   },
   app: {

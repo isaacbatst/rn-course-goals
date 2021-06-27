@@ -12,11 +12,16 @@ function GoalItem({ goal }: { goal: Goal }) {
 
 const styles = StyleSheet.create({
   goalContainer: {
-    padding: 10,
+    padding: 20,
     marginVertical: 10,
-    backgroundColor: '#ccc',
-    borderColor: '#fff',
-    borderWidth: 1,
+    backgroundColor: 'white',
+    borderRadius: 5,
+    shadowOffset: {
+      width: 5,
+      height: 5,
+    },
+    shadowColor: 'white',
+    shadowOpacity: 1,
   },
 });
 

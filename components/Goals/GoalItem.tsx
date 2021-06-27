@@ -1,12 +1,14 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableNativeFeedback } from 'react-native';
 import { Goal } from '../../types';
 
 function GoalItem({ goal }: { goal: Goal }) {
   return (
-    <View style={styles.goalContainer}>
-      <Text>{goal.value}</Text>
-    </View>
+    <TouchableNativeFeedback onPress={() => console.log('test')}>
+      <View style={styles.goalContainer}>
+        <Text>{goal.value}</Text>
+      </View>
+    </TouchableNativeFeedback>
   );
 }
 
